@@ -6,21 +6,18 @@ class PolyTreeNode
   end
 
   def parent=(parent)
+    @parent.children.delete(self) if @parent
     @parent = parent
-
-    if !@parent.nil? && !@parent.children.include?(self) 
-       @parent.add_child(self)
-    else
-       @parent.remove_child(self)
-    end
+    @parent.children << self if !@parent.nil? && !@parent.children.include?(self) 
   end
   
   def add_child(child)
-    @children << child
+    child.parent=(self)
   end
 
   def remove_child(child)
-    
+    raise "Child does not exist" if !self.children.include?(child)
+    child.parent=(nil)
   end
 
   # def inspect
