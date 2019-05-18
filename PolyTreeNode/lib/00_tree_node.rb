@@ -27,17 +27,26 @@ class PolyTreeNode
   attr_reader :parent, :value, :children
 end
 
-n1 = PolyTreeNode.new(1)
-n2 = PolyTreeNode.new(2)
-n3 = PolyTreeNode.new(3)
-
-n3.parent=(n2)
-
-
-# n2.parent=(n1)
-# n3.parent=(n1)
-
-# n3.parent=nil
-# n3.parent=n2
+# n1 = PolyTreeNode.new(1)
+# n2 = PolyTreeNode.new(2)
+# n3 = PolyTreeNode.new(3)
+# n3.parent=(n2)
+# # n2.parent=(n1)
+# # n3.parent=(n1)
+# # n3.parent=nil
+# # n3.parent=n2
 
 
+
+
+
+class Searchable
+  def initialize
+  end
+
+  def dfs() 
+  end
+
+  def bfs()
+  end
+end
